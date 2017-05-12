@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1077AAB8-6760-42D2-B1FE-586461C84AD8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NetFrame</RootNamespace>
+    <AssemblyName>NetFrame</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Net\TCP\Listener\Asynchronous\AsyncEventArgs.cs" />
+    <Compile Include="Net\TCP\Listener\Asynchronous\AsyncTCPServer.cs" />
+    <Compile Include="Net\TCP\Listener\Asynchronous\TCPClientState.cs" />
+    <Compile Include="Net\TCP\Listener\Synchronous\TCPClientHandle.cs" />
+    <Compile Include="Net\TCP\Listener\Synchronous\TCPEventArgs.cs" />
+    <Compile Include="Net\TCP\Listener\Synchronous\TCPServer.cs" />
+    <Compile Include="Net\TCP\Sock\Asynchronous\AsyncSocketEventArgs.cs" />
+    <Compile Include="Net\TCP\Sock\Asynchronous\AsyncSocketState.cs" />
+    <Compile Include="Net\TCP\Sock\Asynchronous\AsyncSocketTCPServer.cs" />
+    <Compile Include="Net\TCP\Sock\IOCP\AsyncIOCPServer.cs" />
+    <Compile Include="Net\TCP\Sock\IOCP\AsyncUserToken.cs" />
+    <Compile Include="Net\TCP\Sock\IOCP\AsyncUserTokenPool.cs" />
+    <Compile Include="Net\TCP\Sock\IOCP\DynamicBufferManager.cs" />
+    <Compile Include="Net\TCP\Sock\Synchronous\SocketClientHandle.cs" />
+    <Compile Include="Net\TCP\Sock\Synchronous\SocketEventArgs.cs" />
+    <Compile Include="Net\TCP\Sock\Synchronous\SocketTCPServer.cs" />
+    <Compile Include="Net\UDP\Listener\Asynchronous\AsyncUDPEventArgs.cs" />
+    <Compile Include="Net\UDP\Listener\Asynchronous\AsyncUDPServer.cs" />
+    <Compile Include="Net\UDP\Listener\Asynchronous\AsyncUDPState.cs" />
+    <Compile Include="Net\UDP\Listener\Synchronous\UDPEventArgs.cs" />
+    <Compile Include="Net\UDP\Listener\Synchronous\UDPServer.cs" />
+    <Compile Include="Net\UDP\Listener\Synchronous\UDPState.cs" />
+    <Compile Include="Net\UDP\Sock\Asynchronous\AsyncSocketUDPEventArgs.cs" />
+    <Compile Include="Net\UDP\Sock\Asynchronous\AsyncSocketUDPServer.cs" />
+    <Compile Include="Net\UDP\Sock\Asynchronous\AsyncSocketUDPState.cs" />
+    <Compile Include="Net\UDP\Sock\Synchronous\SocketUDPEventArgs.cs" />
+    <Compile Include="Net\UDP\Sock\Synchronous\SocketUDPServer.cs" />
+    <Compile Include="Net\UDP\Sock\Synchronous\SocketUDPState.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
