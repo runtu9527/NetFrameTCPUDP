@@ -19,6 +19,11 @@ namespace NetFrame.Net.TCP.Listener.Asynchronous
         public byte[] Buffer { get; private set; }
 
         /// <summary>
+        /// 获取接收到的数据长度
+        /// </summary>
+        public int BufferLength { get; set; }
+
+        /// <summary>
         /// 获取网络流
         /// </summary>
         public NetworkStream NetworkStream

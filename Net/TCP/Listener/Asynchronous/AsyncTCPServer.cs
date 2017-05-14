@@ -139,12 +139,12 @@ namespace NetFrame.Net.TCP.Listener.Asynchronous
             if (IsRunning)
             {
                 IsRunning = false;
-                _listener.Stop();
                 lock (_clients)
                 {
                     //关闭所有客户端连接
                     CloseAllClient();
                 }
+                _listener.Stop();
             }
         }
 
@@ -203,6 +203,8 @@ namespace NetFrame.Net.TCP.Listener.Asynchronous
                     // connection has been closed
                     lock (_clients)
                     {
+                        EndPoint endpoint = state.TcpClient.Client.RemoteEndPoint;
+                        TCPClientState tmpstate = state;
                         _clients.Remove(state);
                         //触发客户端连接断开事件
                         RaiseClientDisconnected(state);
@@ -212,6 +214,7 @@ namespace NetFrame.Net.TCP.Listener.Asynchronous
 
                 // received byte and trigger event notification
                 byte[] buff = new byte[recv];
+                state.BufferLength = recv;
                 Buffer.BlockCopy(state.Buffer, 0, buff, 0, recv);
                 //触发数据收到事件
                 RaiseDataReceived(state);
@@ -292,7 +295,7 @@ namespace NetFrame.Net.TCP.Listener.Asynchronous
         {
             if (ClientDisconnected != null)
             {
-                ClientDisconnected(this, new AsyncEventArgs("连接断开"));
+                ClientDisconnected(this, new AsyncEventArgs("连接断开",state));
             }
         }
 
@@ -401,10 +404,15 @@ namespace NetFrame.Net.TCP.Listener.Asynchronous
         /// </summary>
         public void CloseAllClient()
         {
-            foreach (TCPClientState client in _clients)
+            for (int i = _clients.Count - 1; i >= 0; i--)
             {
-                Close(client);
+                Close((TCPClientState)_clients[i]);
+
             }
+            //foreach (TCPClientState client in _clients)
+            //{
+            //    Close(client);
+            //}
             _clientCount = 0;
             _clients.Clear();
         }
