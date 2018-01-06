@@ -31,6 +31,7 @@ namespace ClientDemo
                 Console.Write(bt);
             }
             Console.WriteLine();
+     
             System.Threading.Thread.Sleep(200);
         }
 
