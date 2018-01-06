@@ -26,22 +26,22 @@ namespace ServerDemo
             Console.ReadLine();
         }
 
-        static void Server_CompletedSend(object sender, NetFrame.Net.TCP.Listener.Asynchronous.AsyncEventArgs e)
+        static void Server_CompletedSend(object sender, NetFrame.Server.TCP.Listener.Asynchronous.AsyncEventArgs e)
         {
             
         }
 
-        static void Server_DataReceived(object sender, NetFrame.Net.TCP.Listener.Asynchronous.AsyncEventArgs e)
+        static void Server_DataReceived(object sender, NetFrame.Server.TCP.Listener.Asynchronous.AsyncEventArgs e)
         {
             
         }
 
-        static void Server_ClientDisconnected(object sender, NetFrame.Net.TCP.Listener.Asynchronous.AsyncEventArgs e)
+        static void Server_ClientDisconnected(object sender, NetFrame.Server.TCP.Listener.Asynchronous.AsyncEventArgs e)
         {
             socket = null;
         }
 
-        static void Server_ClientConnected(object sender, NetFrame.Net.TCP.Listener.Asynchronous.AsyncEventArgs e)
+        static void Server_ClientConnected(object sender, NetFrame.Server.TCP.Listener.Asynchronous.AsyncEventArgs e)
         {
             Console.WriteLine("客户端连接成功" + e._state.TcpClient.Client.RemoteEndPoint.ToString());
             socket = e._state.TcpClient;
