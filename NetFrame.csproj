@@ -48,6 +48,7 @@
     <Compile Include="Client\TCP\SyncSocket\SyncSocketCommFunc.cs" />
     <Compile Include="Client\TCP\SyncSocket\SyncSocketCommProperty.cs" />
     <Compile Include="Client\TCP\SyncSocket\SyncTCPClientEventArgs.cs" />
+    <Compile Include="Client\UDP\AsyncSocket\AsyncUDPClient.cs" />
     <Compile Include="Net\TCP\Listener\Asynchronous\AsyncEventArgs.cs" />
     <Compile Include="Net\TCP\Listener\Asynchronous\AsyncTCPServer.cs" />
     <Compile Include="Net\TCP\Listener\Asynchronous\TCPClientState.cs" />
@@ -79,7 +80,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Client\UDP\" />
+    <Folder Include="Client\UDP\SyncSocket\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
