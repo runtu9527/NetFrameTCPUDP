@@ -257,8 +257,8 @@ namespace NetFrame.Net.TCP.Sock.Asynchronous
         /// <param name="ar">目标客户端Socket</param>
         private void SendDataEnd(IAsyncResult ar)
         {
-            ((Socket)ar.AsyncState).EndSend(ar);
-            RaiseCompletedSend(null);
+            int sendnum = ((Socket)ar.AsyncState).EndSend(ar);
+            RaiseCompletedSend(sendnum,null);
         }
         #endregion
 
@@ -335,11 +335,11 @@ namespace NetFrame.Net.TCP.Sock.Asynchronous
         /// 触发数据发送完毕的事件
         /// </summary>
         /// <param name="state"></param>
-        private void RaiseCompletedSend(AsyncSocketState state)
+        private void RaiseCompletedSend(int num,AsyncSocketState state)
         {
             if (CompletedSend != null)
             {
-                CompletedSend(this, new AsyncSocketEventArgs(state));
+                CompletedSend(this, new AsyncSocketEventArgs(num.ToString(), state));
             }
         }
 
