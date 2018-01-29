@@ -5,17 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
+using NetFrame.TCP.Server.Sock.Synchronous;
 namespace ServerDemo
 {
     class Program
     {
         private static ServerTest server;
         private static IPEndPoint localPoint;
-        private static TcpClient socket;
+        private static SocketClientHandle socket;
         private static System.Timers.Timer timer;
         static void Main(string[] args)
         {
-            localPoint = new IPEndPoint(IPAddress.Parse("0.0.0.0"), 6655);
+            localPoint = new IPEndPoint(IPAddress.Parse("0.0.0.0"), 6688);
             server = new ServerTest(localPoint);
             server.Server.ClientConnected += Server_ClientConnected;
             server.Server.ClientDisconnected += Server_ClientDisconnected;
@@ -26,25 +27,25 @@ namespace ServerDemo
             Console.ReadLine();
         }
 
-        static void Server_CompletedSend(object sender, NetFrame.Server.TCP.Listener.Asynchronous.AsyncEventArgs e)
+        static void Server_CompletedSend(object sender, NetFrame.TCP.Server.Sock.Synchronous.SocketEventArgs e)
         {
             
         }
 
-        static void Server_DataReceived(object sender, NetFrame.Server.TCP.Listener.Asynchronous.AsyncEventArgs e)
+        static void Server_DataReceived(object sender, NetFrame.TCP.Server.Sock.Synchronous.SocketEventArgs e)
         {
             
         }
 
-        static void Server_ClientDisconnected(object sender, NetFrame.Server.TCP.Listener.Asynchronous.AsyncEventArgs e)
+        static void Server_ClientDisconnected(object sender, NetFrame.TCP.Server.Sock.Synchronous.SocketEventArgs e)
         {
             socket = null;
         }
 
-        static void Server_ClientConnected(object sender, NetFrame.Server.TCP.Listener.Asynchronous.AsyncEventArgs e)
+        static void Server_ClientConnected(object sender, NetFrame.TCP.Server.Sock.Synchronous.SocketEventArgs e)
         {
-            Console.WriteLine("客户端连接成功" + e._state.TcpClient.Client.RemoteEndPoint.ToString());
-            socket = e._state.TcpClient;
+            Console.WriteLine("客户端连接成功" + e._handle.client.RemoteEndPoint.ToString());
+            socket = e._handle;
 
             timer = new System.Timers.Timer();
             timer.Elapsed += timer_Elapsed;
@@ -63,7 +64,8 @@ namespace ServerDemo
             0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19,
             0x20, 0x21, 0x22, 0x23, 0x24, 0x25, 0x26, 0x27, 0x28, 0x29 ,
             0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39 }).ToArray();
-            server.Server.Send(socket, sendbyte);
+
+            server.Server.Send(sendbyte, socket);
         }
 
         public static byte[] intToBytes2(int value)

@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NetFrame.Server.TCP.Listener.Asynchronous;
+using NetFrame.TCP.Server.Sock.Synchronous;
 using System.Net;
 using System.Net.Sockets;
 namespace ServerDemo
 {
     public class ServerTest
     {
-        public AsyncTCPServer Server = null;
+        public SocketTCPServer Server = null;
        
         public ServerTest(IPEndPoint localPoint)
         {
-            Server = new AsyncTCPServer(localPoint);
+            Server = new SocketTCPServer(localPoint);
         }
 
         public void Start()

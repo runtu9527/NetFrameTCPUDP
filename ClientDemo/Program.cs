@@ -12,7 +12,7 @@ namespace ClientDemo
         static void Main(string[] args)
         {
             client = new ClientTest();
-            client.Connect("127.0.0.1", 6655);
+            client.Connect("192.168.1.4", 6655);
 
             Console.ReadLine();
         }

@@ -40,48 +40,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client\TCP\AsyncSocket\AsyncSocketComm.cs" />
-    <Compile Include="Client\TCP\AsyncSocket\AsyncSocketCommFunc.cs" />
-    <Compile Include="Client\TCP\AsyncSocket\AsyncSocketCommProperty.cs" />
-    <Compile Include="Client\TCP\AsyncSocket\AsyncTCPClientEventArgs.cs" />
-    <Compile Include="Client\TCP\SyncSocket\SyncSocketComm.cs" />
-    <Compile Include="Client\TCP\SyncSocket\SyncSocketCommFunc.cs" />
-    <Compile Include="Client\TCP\SyncSocket\SyncSocketCommProperty.cs" />
-    <Compile Include="Client\TCP\SyncSocket\SyncTCPClientEventArgs.cs" />
-    <Compile Include="Client\UDP\AsyncSocket\AsyncUDPClient.cs" />
-    <Compile Include="Server\TCP\Listener\Asynchronous\AsyncEventArgs.cs" />
-    <Compile Include="Server\TCP\Listener\Asynchronous\AsyncTCPServer.cs" />
-    <Compile Include="Server\TCP\Listener\Asynchronous\TCPClientState.cs" />
-    <Compile Include="Server\TCP\Listener\Synchronous\TCPClientHandle.cs" />
-    <Compile Include="Server\TCP\Listener\Synchronous\TCPEventArgs.cs" />
-    <Compile Include="Server\TCP\Listener\Synchronous\TCPServer.cs" />
-    <Compile Include="Server\TCP\Sock\Asynchronous\AsyncSocketEventArgs.cs" />
-    <Compile Include="Server\TCP\Sock\Asynchronous\AsyncSocketState.cs" />
-    <Compile Include="Server\TCP\Sock\Asynchronous\AsyncSocketTCPServer.cs" />
-    <Compile Include="Server\TCP\Sock\IOCP\AsyncIOCPServer.cs" />
-    <Compile Include="Server\TCP\Sock\IOCP\AsyncUserToken.cs" />
-    <Compile Include="Server\TCP\Sock\IOCP\AsyncUserTokenPool.cs" />
-    <Compile Include="Server\TCP\Sock\IOCP\DynamicBufferManager.cs" />
-    <Compile Include="Server\TCP\Sock\Synchronous\SocketClientHandle.cs" />
-    <Compile Include="Server\TCP\Sock\Synchronous\SocketEventArgs.cs" />
-    <Compile Include="Server\TCP\Sock\Synchronous\SocketTCPServer.cs" />
-    <Compile Include="Server\UDP\Listener\Asynchronous\AsyncUDPEventArgs.cs" />
-    <Compile Include="Server\UDP\Listener\Asynchronous\AsyncUDPServer.cs" />
-    <Compile Include="Server\UDP\Listener\Asynchronous\AsyncUDPState.cs" />
-    <Compile Include="Server\UDP\Listener\Synchronous\UDPEventArgs.cs" />
-    <Compile Include="Server\UDP\Listener\Synchronous\UDPServer.cs" />
-    <Compile Include="Server\UDP\Listener\Synchronous\UDPState.cs" />
-    <Compile Include="Server\UDP\Sock\Asynchronous\AsyncSocketUDPEventArgs.cs" />
-    <Compile Include="Server\UDP\Sock\Asynchronous\AsyncSocketUDPServer.cs" />
-    <Compile Include="Server\UDP\Sock\Asynchronous\AsyncSocketUDPState.cs" />
-    <Compile Include="Server\UDP\Sock\Synchronous\SocketUDPEventArgs.cs" />
-    <Compile Include="Server\UDP\Sock\Synchronous\SocketUDPServer.cs" />
-    <Compile Include="Server\UDP\Sock\Synchronous\SocketUDPState.cs" />
+    <Compile Include="TCP\Client\AsyncSocket\AsyncSocketComm.cs" />
+    <Compile Include="TCP\Client\AsyncSocket\AsyncSocketCommFunc.cs" />
+    <Compile Include="TCP\Client\AsyncSocket\AsyncSocketCommProperty.cs" />
+    <Compile Include="TCP\Client\AsyncSocket\AsyncTCPClientEventArgs.cs" />
+    <Compile Include="TCP\Client\SyncSocket\SyncSocketComm.cs" />
+    <Compile Include="TCP\Client\SyncSocket\SyncSocketCommFunc.cs" />
+    <Compile Include="TCP\Client\SyncSocket\SyncSocketCommProperty.cs" />
+    <Compile Include="TCP\Client\SyncSocket\SyncTCPClientEventArgs.cs" />
+    <Compile Include="TCP\Server\Listener\Asynchronous\AsyncEventArgs.cs" />
+    <Compile Include="TCP\Server\Listener\Asynchronous\AsyncTCPServer.cs" />
+    <Compile Include="TCP\Server\Listener\Asynchronous\TCPClientState.cs" />
+    <Compile Include="TCP\Server\Listener\Synchronous\TCPClientHandle.cs" />
+    <Compile Include="TCP\Server\Listener\Synchronous\TCPEventArgs.cs" />
+    <Compile Include="TCP\Server\Listener\Synchronous\TCPServer.cs" />
+    <Compile Include="TCP\Server\Sock\Asynchronous\AsyncSocketEventArgs.cs" />
+    <Compile Include="TCP\Server\Sock\Asynchronous\AsyncSocketState.cs" />
+    <Compile Include="TCP\Server\Sock\Asynchronous\AsyncSocketTCPServer.cs" />
+    <Compile Include="TCP\Server\Sock\IOCP\AsyncIOCPServer.cs" />
+    <Compile Include="TCP\Server\Sock\IOCP\AsyncUserToken.cs" />
+    <Compile Include="TCP\Server\Sock\IOCP\AsyncUserTokenPool.cs" />
+    <Compile Include="TCP\Server\Sock\IOCP\DynamicBufferManager.cs" />
+    <Compile Include="TCP\Server\Sock\Synchronous\SocketClientHandle.cs" />
+    <Compile Include="TCP\Server\Sock\Synchronous\SocketEventArgs.cs" />
+    <Compile Include="TCP\Server\Sock\Synchronous\SocketTCPServer.cs" />
+    <Compile Include="UDP\Listener\Asynchronous\AsyncUDPEventArgs.cs" />
+    <Compile Include="UDP\Listener\Asynchronous\AsyncUDPServer.cs" />
+    <Compile Include="UDP\Listener\Asynchronous\AsyncUDPState.cs" />
+    <Compile Include="UDP\Listener\Synchronous\UDPEventArgs.cs" />
+    <Compile Include="UDP\Listener\Synchronous\UDPServer.cs" />
+    <Compile Include="UDP\Listener\Synchronous\UDPState.cs" />
+    <Compile Include="UDP\Sock\Asynchronous\AsyncSocketUDPEventArgs.cs" />
+    <Compile Include="UDP\Sock\Asynchronous\AsyncSocketUDPServer.cs" />
+    <Compile Include="UDP\Sock\Asynchronous\AsyncSocketUDPState.cs" />
+    <Compile Include="UDP\Sock\Synchronous\SocketUDPEventArgs.cs" />
+    <Compile Include="UDP\Sock\Synchronous\SocketUDPServer.cs" />
+    <Compile Include="UDP\Sock\Synchronous\SocketUDPState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Client\UDP\SyncSocket\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

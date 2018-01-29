@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Net;
-using NetFrame.Client.TCP.AsyncSocket;
+using NetFrame.TCP.Client.AsyncSocket;
 
 namespace ClientDemo
 {
@@ -26,13 +26,10 @@ namespace ClientDemo
         void Client_DataReceived(object sender, AsyncTCPClientEventArgs e)
         {
             byte[] data=sender as byte[];
-            foreach (var bt in data)
-            {
-                Console.Write(bt);
-            }
-            Console.WriteLine();
+
+            Console.WriteLine(data.Length);
      
-            System.Threading.Thread.Sleep(200);
+            //System.Threading.Thread.Sleep(200);
         }
 
         void Client_ClientConnected(object sender, AsyncTCPClientEventArgs e)
@@ -43,6 +40,7 @@ namespace ClientDemo
         public void Connect(string ip,int port)
         {
             Client.BuildServerSocket(ip, port);
+            Client.MaxBufLen = 48;
         }
     }
 }
